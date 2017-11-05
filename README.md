@@ -1,0 +1,1 @@
+Scraping details from kupatana

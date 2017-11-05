@@ -1,0 +1,62 @@
+image: python:latest
+
+job1:
+   script: 
+   - pip install --upgrade pip
+   - pip install -r requirements.txt
+   - current_time=$(date "+%d%m%Y%H%M%S")
+   - file_name=$current_time.csv
+   - echo $file_name
+   #- pwd
+   - cd /builds/janejohn/kupatana
+   - scrapy crawl kupatana_electronics -o /builds/janejohn/kupatana/reports/kupatana_electronics_$file_name
+   #- scrapy crawl scrapy_amz_lenovo_vibe_k5 -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_lenovo_vibe_k5_$file_name
+   #- scrapy crawl scrapy_amz_oneplus_5 -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_oneplus_5_$file_name
+   #- scrapy crawl scrapy_amz_moto_4_gen -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_moto_4_gen_$file_name
+   #- scrapy crawl scrapy_amz_google_pixel_xl -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_google_pixel_xl_$file_name
+   #- scrapy crawl scrapy_amz_lg_g6 -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_lg_g6_$file_name
+   #- scrapy crawl scrapy_amz_honor_navy_blue -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_honor_navy_blue_$file_name
+   #- scrapy crawl scrapy_amz_samsung_galaxy_s7 -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_samsung_galaxy_s7_$file_name
+   #- scrapy crawl scrapy_amz_iphone_6_gold -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_iphone_6_gold_$file_name
+   #- scrapy crawl scrapy_amz_redmi_4 -o /builds/lenioprojects/scrapy_sample/reports/scrapy_amz_redmi_4_$file_name
+   when: always
+   artifacts:
+      paths:
+      - reports
+      when: always
+      expire_in: 1 day
+      
+
+#job_electronics_amazon:
+#   script:
+#   - pip install --upgrade pip
+#   - pip install -r requirements.txt
+#   - current_time=$(date "+%d%m%Y%H%M%S")
+#   - file_name=$current_time.csv
+#   - echo $file_name
+#   - pwd
+#   - cd /builds/lenioprojects/scrapy_sample
+#   - scrapy crawl scrapy_amz_cameras -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_cameras_$file_name
+#   - scrapy crawl scrapy_amz_headphones -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_headphones_$file_name
+#   - scrapy crawl scrapy_amz_laptops -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_laptops_$file_name
+#   - scrapy crawl scrapy_amz_memorycards -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_memorycards_$file_name
+#   - scrapy crawl scrapy_amz_mobiles -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_mobiles_$file_name
+#   - scrapy crawl scrapy_amz_pendrives -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_pendrives_$file_name
+#   - scrapy crawl scrapy_amz_powerbanks -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_powerbanks_$file_name
+#   - scrapy crawl scrapy_amz_speakers -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_speakers_$file_name
+#   - scrapy crawl scrapy_amz_tablets -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_tablets_$file_name
+#   - scrapy crawl scrapy_amz_televisions -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_televisions_$file_name
+#   - scrapy crawl scrapy_amz_trimmers -o /builds/lenioprojects/scrapy_sample/reports/electronics_amazon_trimmers_$file_name
+#   when: always
+#   artifacts:
+#      paths:
+#      - reports
+#      when: always
+#      expire_in: 1 day
+       
+      
+#trigger_build:
+#   #stage: deploy
+#   script: 
+   #- "curl -X POST -F token=TOKEN -F ref=REF_NAME https://gitlab.com/api/v3/projects/2633888/trigger/builds"
+#   - "5 * * * * * curl --request POST --form token=1d543d5141bd30cde1c865a5045b67 --form ref=master https://gitlab.example.com/api/v3/projects/2633888/trigger/builds"
