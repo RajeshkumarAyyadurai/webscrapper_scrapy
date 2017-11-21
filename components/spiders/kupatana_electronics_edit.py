@@ -1,11 +1,11 @@
 import scrapy
 import re
 from bs4 import BeautifulSoup
-from resusables.api.apimodules import apimodules
+from modules.api import APIMethods
 from requests import Session
 
 
-class kupatana_electronics(apimodules, scrapy.Spider):
+class kupatana_electronics(scrapy.Spider):
     name = "kupatana_electronics_edit"
 
     start_urls = [
@@ -17,7 +17,7 @@ class kupatana_electronics(apimodules, scrapy.Spider):
         print('edit ver')
         for div in response.selector.xpath('//div[@class="content-wrapper"]'):
             prod_id = (div.xpath('div[1]/@class').re(r'list-item-show_number\s*(.*)'))[0]
-            resp = apimodules.get_kupatana_phone_number(prod_id)
+            resp = APIMethods.get_kupatana_phone_number(prod_id)
             if resp.status_code is not 200:
                 raise ValueError('Fetching kupartana phone number operation failed: {} \n {}'.format(resp.status_code, resp.json()))
             phone_number = resp.json()['data']['phoneNumber']

@@ -15,7 +15,7 @@ class amz_cameras(scrapy.Spider):
 		for div in response.selector.xpath('//div[@class="s-item-container"]'):
 			price_with_offer= div.xpath('div[@class="a-row a-spacing-mini"][2]/div[2]/span[2]/text()').re_first(r'\((.*)\)')
 			if price_with_offer is not None:
-				build_absolute_url = div.xpath('div[@class="a-row a-spacing-base"]/div/div/a/@href').extract_first()
+				build_absolute_url = div.xpath('div[@class="a-row a-spacing-bases"]/div/div/a/@href').extract_first()
 			#match=re.search(u'\((.*)\)',price_with_offer)
 			#offer=match.group(1)
 			

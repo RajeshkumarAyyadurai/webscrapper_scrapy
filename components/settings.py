@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'kupatana'
+BOT_NAME = 'scrapy-example'
 
-SPIDER_MODULES = ['scrapy_kupatana.spiders']
-NEWSPIDER_MODULE = 'scrapy_kupatana.spiders'
+SPIDER_MODULES = ['components.spiders']
+NEWSPIDER_MODULE = 'components.spiders'
  
 # Feed Export Settings
 #FEED_FORMAT = 'csv'
@@ -27,7 +27,7 @@ NEWSPIDER_MODULE = 'scrapy_kupatana.spiders'
 #ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS = 100
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay

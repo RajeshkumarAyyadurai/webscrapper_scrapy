@@ -1,8 +1,9 @@
 from requests import Session
-from resusables.data import data
+from bases.data import data
 
 
-class apimodules:
+class APIMethods:
+
     def __init__(self):
         self.client = Session()
         self.client.verify = False
@@ -16,5 +17,9 @@ class apimodules:
     def get_kupatana_phone_number(self, product_id, json=None):
         if not json:
             json = data.kupatana_phone_number(product_id)
-        url = self._kupatana_url()
-        return self.client.post(url, json=json)
+            url = self._kupatana_url()
+            resp = self.client.post(url, json=json)
+            if resp.status_code is not 200:
+                raise ValueError(
+                    'Fetching kupartana phone number operation failed: {} \n {}'.format(resp.status_code, resp.json()))
+            return resp.json()['data']['phoneNumber']
