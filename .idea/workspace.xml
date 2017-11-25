@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b25ebb-c21f-4313-bab9-a460d0ea334b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/check_jobs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scrapinghub.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/setup.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b3b25ebb-c21f-4313-bab9-a460d0ea334b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
