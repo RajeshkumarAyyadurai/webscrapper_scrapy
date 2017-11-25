@@ -5,8 +5,8 @@ setup(
     name='scrapy-example',
     version='1.0',
     packages=find_packages(),
-    scripts=[
-        'bin/check_jobs.py',
+    spiders=[
+        'kupatana-electronics',
     ],
     entry_points={
         'scrapy': ['settings = components.settings'],
