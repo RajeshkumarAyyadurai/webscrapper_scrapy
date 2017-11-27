@@ -1,6 +1,5 @@
 import scrapy
 import re
-from bases import URLs
 from scrapy import Spider as BaseSpider
 from modules.gui import GUIMethods
 from components.items import KupatanaItem
@@ -9,7 +8,14 @@ from components.items import KupatanaItem
 class KupatanaElectronics(BaseSpider):
 
     name = "kupatana-electronics"
-    start_urls = URLs.Kupatana_RealEstateURL
+    start_urls = [
+    'https://kupatana.com/real-estate_buy-and-sell-kilimanjaro-r20',
+    #'https://kupatana.com/real-estate_buy-and-sell-dar-es-salaam-r21',
+    #'https://kupatana.com/real-estate_buy-and-sell-iringa-r7',
+    #'https://kupatana.com/real-estate_buy-and-sell-arusha-r14',
+    #'https://kupatana.com/real-estate_buy-and-sell-dodoma-r12',
+    #'https://kupatana.com/real-estate_buy-and-sell-kigoma-r11',
+]
 
     def __init__(self):
         super().__init__()
